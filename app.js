@@ -44,8 +44,12 @@ app.get('/' , (req, res) => {
 
 app.get('/bacheca' , (req, res) =>{
 res.json({
-    count : articoli.length
+    count : articoli.length,
     posts : articoli
 
 })
 })
+
+app.listen(port, () => {
+    console.log(`Server avviato http://localhost:${port}`);
+});
