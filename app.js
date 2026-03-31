@@ -4,7 +4,7 @@ const port = 3000
 
 app.use(express.static('public'))
 
-const posts = [
+const articoli = [
     {
         titolo: "Il mio primo viaggio in Giappone",
         contenuto: "Un'esperienza incredibile tra tradizione e tecnologia.",
@@ -40,4 +40,12 @@ const posts = [
 
 app.get('/' , (req, res) => {
     res.send("bevenuti nella home page")
+})
+
+app.get('/bacheca' , (req, res) =>{
+res.json({
+    count : articoli.length
+    posts : articoli
+
+})
 })
